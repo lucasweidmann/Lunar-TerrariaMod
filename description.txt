@@ -1,1 +1,12 @@
-Modify this file with a description of your mod.
+by Purelabel 82, clark.
+**Lunar** is a content expansion mod for Terraria focused on the power and mystery of the Moon.
+Harness celestial energy, craft moon-forged weapons and armor, and face enemies that awaken only under the night sky. From early progression to post-Moon Lord, Lunar introduces new materials, bosses, mechanics, and exploration tied to lunar phases and cosmic events.
+
+Features include:
+• New ores and crafting materials infused with moonlight
+• Weapons and armor themed around lunar magic and space technology
+• Unique enemies that appear during specific moon phases
+• Challenging bosses connected to celestial phenomena
+• New accessories and abilities that manipulate gravity, light, and starlight
+
+The night is no longer just darkness — it’s a new world waiting above you.
