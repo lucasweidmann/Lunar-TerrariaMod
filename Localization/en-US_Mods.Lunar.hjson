@@ -25,6 +25,23 @@ Items: {
 		DisplayName: Lunar Staff
 		Tooltip: ""
 	}
+
+	LunarOreItem: {
+		DisplayName: Lunar Ore Item
+		Tooltip: ""
+	}
+
+	LunarOre: {
+		DisplayName: Lunar Ore
+		Tooltip: ""
+	}
 }
 
 Projectiles.LunarProjectile.DisplayName: Lunar Projectile
+
+NPCs: {
+	Astronaut.DisplayName: Astronaut
+	LunarSlime.DisplayName: Lunar Slime
+}
+
+Tiles.LunarOreTile.MapEntry: Lunar Ore Tile

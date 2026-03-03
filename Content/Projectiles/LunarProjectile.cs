@@ -23,7 +23,20 @@ namespace Lunar.Content.Projectiles
             Projectile.alpha = 0; // Completely transparent
         }
         public override void AI() // This hook updates every tick
+        
         {
+            Projectile.rotation = 0f;
+            Projectile.frameCounter++;
+
+            if (Projectile.frameCounter >= 3) // velocidade da animação
+            {
+                Projectile.frameCounter = 0;
+                Projectile.frame++;
+
+                if (Projectile.frame >= Main.projFrames[Type])
+                    Projectile.frame = 0;
+            }
+
             if (Main.netMode != NetmodeID.Server) // Do not spawn dust on server!
             {
                 Dust dust = Dust.NewDustPerfect(
@@ -44,12 +57,13 @@ namespace Lunar.Content.Projectiles
             for (int i = 0; i < numDust; i++) // Loop through code below numDust times
             {
                 Vector2 velocity = Vector2.One.RotatedBy(MathHelper.ToRadians(360 / numDust * i)); // Circular velocity
-                Dust.NewDustPerfect(Projectile.Center, DustID.Electric, velocity).noGravity = true; // Creating dust
+                Dust.NewDustPerfect(Projectile.Center, DustID.BlueTorch, velocity).noGravity = true; // Creating dust
             }
         }
         public override void SetStaticDefaults()
         {
-            Terraria.Item.staff[Type] = true;
+            // Terraria.Item.staff[Type] = true;
+            Main.projFrames[Type] = 4; // número de frames da sprite
         }
     }
 }
