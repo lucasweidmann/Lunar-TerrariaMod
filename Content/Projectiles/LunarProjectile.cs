@@ -7,11 +7,6 @@ namespace Lunar.Content.Projectiles
 {
     public class LunarProjectile : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            Item.staff[Item.type] = true;
-        }
-
         public override void SetDefaults()
         {
             Projectile.DamageType = DamageClass.Magic; // Damage class projectile uses
@@ -51,6 +46,10 @@ namespace Lunar.Content.Projectiles
                 Vector2 velocity = Vector2.One.RotatedBy(MathHelper.ToRadians(360 / numDust * i)); // Circular velocity
                 Dust.NewDustPerfect(Projectile.Center, DustID.Electric, velocity).noGravity = true; // Creating dust
             }
+        }
+        public override void SetStaticDefaults()
+        {
+            Terraria.Item.staff[Type] = true;
         }
     }
 }
