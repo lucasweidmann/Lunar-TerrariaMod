@@ -26,8 +26,21 @@ namespace Lunar.Content.Items
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
 		}
+        public override void MeleeEffects(Player player, Rectangle hitbox)
+        {
+            if (Main.rand.NextBool(3)) // With 1/3 chance per tick (60 ticks = 1 second)...
+            {
+                // ...spawning dust
+                Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), // Position to spawn
+                hitbox.Width, hitbox.Height, // Width and Height
+                DustID.Cloud, // Dust type. Check https://terraria.wiki.gg/wiki/Dust_IDs
+                0, 0, // Speed X and Speed Y of dust, it have some randomization
+                125); // Dust transparency, 0 - full visibility, 255 - full transparency
 
-		public override void AddRecipes()
+            }
+        }
+
+        public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.DirtBlock, 10);
@@ -35,17 +48,4 @@ namespace Lunar.Content.Items
 			recipe.Register();
 		}
 	}
-}
-public override void MeleeEffects(Player player, Rectangle hitbox)
-{
-    if (Main.rand.NextBool(3)) // With 1/3 chance per tick (60 ticks = 1 second)...
-    {
-        // ...spawning dust
-        Dust.NewDust(new Vector2(hitbox.X, hitbox.Y), // Position to spawn
-        hitbox.Width, hitbox.Height, // Width and Height
-        DustID.StarCloud, // Dust type. Check https://terraria.wiki.gg/wiki/Dust_IDs
-        0, 0, // Speed X and Speed Y of dust, it have some randomization
-        125); // Dust transparency, 0 - full visibility, 255 - full transparency
-
-    }
 }
