@@ -1,9 +1,9 @@
-		using Terraria;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework; // Using another one library
+using Microsoft.Xna.Framework;
 
-namespace Lunar.Content.Items
+namespace Lunar.Content.Items.Weapons.Melee
 {
 	// This is a basic item template.
 	// Please see tModLoader's ExampleMod for every other example:

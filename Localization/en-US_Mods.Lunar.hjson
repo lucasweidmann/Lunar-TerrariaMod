@@ -15,4 +15,16 @@ Items: {
 		DisplayName: Goddess Tear
 		Tooltip: ""
 	}
+
+	LunarGun: {
+		DisplayName: Lunar Gun
+		Tooltip: ""
+	}
+
+	LunarStaff: {
+		DisplayName: Lunar Staff
+		Tooltip: ""
+	}
 }
+
+Projectiles.LunarProjectile.DisplayName: Lunar Projectile
