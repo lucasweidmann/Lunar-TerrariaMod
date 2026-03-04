@@ -35,13 +35,55 @@ Items: {
 		DisplayName: Lunar Ore
 		Tooltip: ""
 	}
+
+	SolarGrimorie: {
+		DisplayName: Solar Grimorie
+		Tooltip: ""
+	}
+
+	SolarScythe: {
+		DisplayName: Solar Scythe
+		Tooltip: ""
+	}
+
+	SolarPistol: {
+		DisplayName: Solar Pistol
+		Tooltip: ""
+	}
+
+	PaleMoon: {
+		DisplayName: Pale Moon
+		Tooltip: ""
+	}
+
+	PaleMoonBag: {
+		DisplayName: Pale Moon Bag
+		Tooltip: ""
+	}
+
+	LunarSummoner: {
+		DisplayName: Lunar Summoner
+		Tooltip: ""
+	}
 }
 
-Projectiles.LunarProjectile.DisplayName: Lunar Projectile
+Projectiles: {
+	LunarProjectile.DisplayName: Lunar Projectile
+	LunarSummon.DisplayName: Lunar Summon
+}
 
 NPCs: {
 	Astronaut.DisplayName: Astronaut
 	LunarSlime.DisplayName: Lunar Slime
+	SolarSlime.DisplayName: Solar Slime
+	PaleMoonSlime.DisplayName: Pale Moon Slime
 }
 
 Tiles.LunarOreTile.MapEntry: Lunar Ore Tile
+
+Buffs: {
+	LunarSummonBuff: {
+		DisplayName: Lunar Summon Buff
+		Description: Mods.Lunar.Buffs.LunarSummonBuff.Description
+	}
+}

@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 using Lunar.Content.Items.Materials;
 using Lunar.Content.Projectiles;
 
-namespace Lunar.Content.Items.Weapons.Mage
+namespace Lunar.Content.Items.Weapons.LunarWeapons.Mage
 {
     public class LunarStaff : ModItem
     {

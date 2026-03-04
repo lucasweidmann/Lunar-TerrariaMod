@@ -5,7 +5,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Lunar.Content.Items.Weapons.Ranged
+namespace Lunar.Content.Items.Weapons.Solar.Ranged
 {
     public class SolarPistol : ModItem
     {

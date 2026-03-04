@@ -8,7 +8,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace Lunar.Content.NPCS.Mobs
+namespace Lunar.Content.NPCS.Mobs.Solar
 {
     public class SolarSlime : ModNPC
     {

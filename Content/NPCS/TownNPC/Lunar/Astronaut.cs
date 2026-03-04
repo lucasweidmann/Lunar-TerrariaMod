@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Lunar.Content.NPCS.TownNPC
+namespace Lunar.Content.NPCS.TownNPC.Lunar
 {
     public class Astronaut : ModNPC
     {
