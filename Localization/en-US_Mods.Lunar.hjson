@@ -65,6 +65,11 @@ Items: {
 		DisplayName: Lunar Summoner
 		Tooltip: ""
 	}
+
+	LunarWorkbench: {
+		DisplayName: Lunar Workbench
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -79,7 +84,10 @@ NPCs: {
 	PaleMoonSlime.DisplayName: Pale Moon Slime
 }
 
-Tiles.LunarOreTile.MapEntry: Lunar Ore Tile
+Tiles: {
+	LunarOreTile.MapEntry: Lunar Ore Tile
+	LunarWorkbenchTile.MapEntry: Lunar Workbench Tile
+}
 
 Buffs: {
 	LunarSummonBuff: {
