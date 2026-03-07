@@ -25,6 +25,7 @@ namespace Lunar.Content.NPCS.Mobs.Solar
 
             return 0f;
         }
+
         public override void SetDefaults()
         {
             NPC.width = 32;
@@ -41,19 +42,19 @@ namespace Lunar.Content.NPCS.Mobs.Solar
             AnimationType = NPCID.BlueSlime;
             Main.npcFrameCount[Type] = 2;
             NPC.alpha = 100;
-            
         }
-        public override void AI()   
+
+        public override void AI()
         {
             Lighting.AddLight(NPC.Center, 0.1f, 0.3f, 0.8f);
+
             if (Main.rand.NextBool(4))
             {
-                // Spawn de dust dentro do hitbox do NPC
                 int dustIndex = Dust.NewDust(
                     NPC.position,
                     NPC.width,
                     NPC.height,
-                    DustID.BlueTorch, // bom pra “glow azul”
+                    DustID.BlueTorch,
                     NPC.velocity.X * 0.2f,
                     NPC.velocity.Y * 0.2f,
                     Alpha: 150,
@@ -62,9 +63,9 @@ namespace Lunar.Content.NPCS.Mobs.Solar
                 );
 
                 Dust d = Main.dust[dustIndex];
-                d.noGravity = true;          // fica “flutuando”
-                d.velocity *= 0.3f;          // mais suave
-                d.fadeIn = 0.8f;             // aparece mais bonito
+                d.noGravity = true;
+                d.velocity *= 0.3f;
+                d.fadeIn = 0.8f;
             }
         }
     }

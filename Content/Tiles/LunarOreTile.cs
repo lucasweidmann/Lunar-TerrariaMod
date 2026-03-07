@@ -11,11 +11,11 @@ namespace Lunar.Content.Tiles
         {
             Main.tileSolid[Type] = true;
             Main.tileBlockLight[Type] = true;
-            Main.tileSpelunker[Type] = true; // brilha com poção
+            Main.tileSpelunker[Type] = true;
             Main.tileOreFinderPriority[Type] = 500;
 
-            MineResist = 4f; // resistência pra minerar
-            MinPick = 65;    // poder mínimo da picareta
+            MineResist = 4f;
+            MinPick = 65;
 
             DustType = DustID.BlueTorch;
             HitSound = SoundID.Tink;

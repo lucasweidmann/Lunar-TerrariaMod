@@ -34,9 +34,9 @@ namespace Lunar.Content.World
                 WorldGen.TileRunner(
                     x,
                     y,
-                    WorldGen.genRand.Next(4, 7),   // tamanho do minério
-                    WorldGen.genRand.Next(3, 6),   // quantidade
-                    ModContent.TileType<Tiles.LunarOreTile>() // seu tile
+                    WorldGen.genRand.Next(4, 7),
+                    WorldGen.genRand.Next(3, 6),
+                    ModContent.TileType<Tiles.LunarOreTile>()
                 );
             }
         }

@@ -14,7 +14,6 @@ namespace Lunar.Content.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
-            // mantém buff enquanto o minion existir
             if (player.ownedProjectileCounts[ModContent.ProjectileType<LunarSummon>()] > 0)
             {
                 player.buffTime[buffIndex] = 18000;

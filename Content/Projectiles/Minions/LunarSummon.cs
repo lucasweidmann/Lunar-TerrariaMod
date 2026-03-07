@@ -13,7 +13,6 @@ namespace Lunar.Content.Projectiles.Minions
         public override void SetStaticDefaults()
         {
             Main.projFrames[Type] = 1;
-
             ProjectileID.Sets.MinionTargettingFeature[Type] = true;
             ProjectileID.Sets.MinionSacrificable[Type] = true;
         }
@@ -22,15 +21,12 @@ namespace Lunar.Content.Projectiles.Minions
         {
             Projectile.width = 32;
             Projectile.height = 21;
-
             Projectile.friendly = true;
-            Projectile.minion = true; // <-- aqui é o certo
+            Projectile.minion = true;
             Projectile.DamageType = DamageClass.Summon;
-
             Projectile.minionSlots = 1f;
             Projectile.penetrate = -1;
             Projectile.timeLeft = 18000;
-
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;
         }
@@ -46,21 +42,17 @@ namespace Lunar.Content.Projectiles.Minions
                 return;
             }
 
-            // mantém vivo enquanto tiver o buff
             if (player.HasBuff(ModContent.BuffType<LunarSummonBuff>()))
                 Projectile.timeLeft = 2;
 
-            // posição "idle" perto do player
             Vector2 idlePos = player.Center + new Vector2(player.direction * -40f, -30f);
             Vector2 toIdle = idlePos - Projectile.Center;
             float distIdle = toIdle.Length();
 
-            // procura alvo
             NPC target = FindTarget(player, out float targetDist);
 
             if (target != null)
             {
-                // segue/ataca: encosta no alvo e causa contato (friendly)
                 Vector2 toTarget = target.Center - Projectile.Center;
                 float speed = 8.5f;
                 float inertia = 18f;
@@ -70,13 +62,11 @@ namespace Lunar.Content.Projectiles.Minions
             }
             else
             {
-                // volta pro player
                 float speed = 7.5f;
                 float inertia = 22f;
 
                 if (distIdle > 600f)
                 {
-                    // teleport se muito longe (evita sumir)
                     Projectile.Center = idlePos;
                     Projectile.velocity = Vector2.Zero;
                     Projectile.netUpdate = true;
@@ -90,7 +80,6 @@ namespace Lunar.Content.Projectiles.Minions
                 }
             }
 
-            // direção/rotação simples
             if (Projectile.velocity.X != 0)
                 Projectile.spriteDirection = Projectile.velocity.X > 0 ? 1 : -1;
         }
@@ -99,7 +88,6 @@ namespace Lunar.Content.Projectiles.Minions
         {
             dist = 900f;
 
-            // target manual do player
             if (player.HasMinionAttackTargetNPC)
             {
                 NPC npc = Main.npc[player.MinionAttackTargetNPC];

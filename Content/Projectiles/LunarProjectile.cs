@@ -9,26 +9,26 @@ namespace Lunar.Content.Projectiles
     {
         public override void SetDefaults()
         {
-            Projectile.DamageType = DamageClass.Magic; // Damage class projectile uses
-            Projectile.scale = 1f; // Projectile scale multiplier
-            Projectile.penetrate = 3; // How many hits projectile have to make before it dies. 3 means projectile will die on 3rd enemy. Setting this to 0 will make projectile die instantly
-            Projectile.aiStyle = 0; // AI style of a projectile. 0 is default bullet AI
-            Projectile.width = Projectile.height = 10; // Hitbox of projectile in pixels
-            Projectile.friendly = true; // Can hit enemies?
-            Projectile.hostile = false; // Can hit player?
-            Projectile.timeLeft = 90; // Time in ticks before projectile dies
-            Projectile.light = 0.3f; // How much light projectile provides
-            Projectile.ignoreWater = true; // Does the projectile ignore water (doesn't slow down in it)
-            Projectile.tileCollide = true; // Does the projectile collide with tiles, like blocks?
-            Projectile.alpha = 0; // Completely transparent
+            Projectile.DamageType = DamageClass.Magic;
+            Projectile.scale = 1f;
+            Projectile.penetrate = 3;
+            Projectile.aiStyle = 0;
+            Projectile.width = Projectile.height = 10;
+            Projectile.friendly = true;
+            Projectile.hostile = false;
+            Projectile.timeLeft = 90;
+            Projectile.light = 0.3f;
+            Projectile.ignoreWater = true;
+            Projectile.tileCollide = true;
+            Projectile.alpha = 0;
         }
-        public override void AI() // This hook updates every tick
-        
+
+        public override void AI()
         {
             Projectile.rotation = 0f;
             Projectile.frameCounter++;
 
-            if (Projectile.frameCounter >= 3) // velocidade da animação
+            if (Projectile.frameCounter >= 3)
             {
                 Projectile.frameCounter = 0;
                 Projectile.frame++;
@@ -37,7 +37,7 @@ namespace Lunar.Content.Projectiles
                     Projectile.frame = 0;
             }
 
-            if (Main.netMode != NetmodeID.Server) // Do not spawn dust on server!
+            if (Main.netMode != NetmodeID.Server)
             {
                 Dust dust = Dust.NewDustPerfect(
                     Position: Projectile.Center,
@@ -46,24 +46,27 @@ namespace Lunar.Content.Projectiles
                     Alpha: 100,
                     newColor: Color.White,
                     Scale: 0.9f
-                    );
-                dust.noGravity = true; // Dust don't have gravity
-                dust.fadeIn = -1f; // Dust will fade out
+                );
+
+                dust.noGravity = true;
+                dust.fadeIn = -1f;
             }
         }
-        public override void OnKill(int timeLeft) // What happens on projectile death
+
+        public override void OnKill(int timeLeft)
         {
             int numDust = 20;
-            for (int i = 0; i < numDust; i++) // Loop through code below numDust times
+
+            for (int i = 0; i < numDust; i++)
             {
-                Vector2 velocity = Vector2.One.RotatedBy(MathHelper.ToRadians(360 / numDust * i)); // Circular velocity
-                Dust.NewDustPerfect(Projectile.Center, DustID.BlueTorch, velocity).noGravity = true; // Creating dust
+                Vector2 velocity = Vector2.One.RotatedBy(MathHelper.ToRadians(360 / numDust * i));
+                Dust.NewDustPerfect(Projectile.Center, DustID.BlueTorch, velocity).noGravity = true;
             }
         }
+
         public override void SetStaticDefaults()
         {
-            // Terraria.Item.staff[Type] = true;
-            Main.projFrames[Type] = 4; // número de frames da sprite
+            Main.projFrames[Type] = 4;
         }
     }
 }

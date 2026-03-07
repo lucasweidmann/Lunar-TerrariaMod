@@ -20,10 +20,7 @@ namespace Lunar.Content.NPCS.Bosses.Pale_Moon_Slime
 
         public override bool CanUseItem(Player player)
         {
-            // só de noite, por exemplo
             if (Main.dayTime) return false;
-
-            // não spawnar se já existir
             return !NPC.AnyNPCs(ModContent.NPCType<PaleMoonSlime>());
         }
 

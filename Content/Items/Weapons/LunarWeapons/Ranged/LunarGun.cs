@@ -11,31 +11,28 @@ namespace Lunar.Content.Items.Weapons.LunarWeapons.Ranged
     {
         public override void SetDefaults()
         {
-            // Visual properties
             Item.width = 70;
             Item.height = 28;
             Item.scale = 1.05f;
-            Item.useStyle = ItemUseStyleID.Shoot; // Use style for guns
+            Item.useStyle = ItemUseStyleID.Shoot;
             Item.rare = ItemRarityID.Blue;
 
-            // Combat properties
-            Item.damage = 50; // Gun damage + bullet damage = final damage
+            Item.damage = 50;
             Item.DamageType = DamageClass.Ranged;
-            Item.useTime = 15; // Delay between shots.
-            Item.useAnimation = 15; // How long shoot animation lasts in ticks.
-            Item.knockBack = 4.5f; // Gun knockback + bullet knockback = final knockback
+            Item.useTime = 15;
+            Item.useAnimation = 15;
+            Item.knockBack = 4.5f;
             Item.autoReuse = true;
 
-            // Other properties
             Item.value = 10000;
-            Item.UseSound = SoundID.Item11; // Gun use sound
+            Item.UseSound = SoundID.Item11;
 
-            // Gun properties
-            Item.noMelee = true; // Item not dealing damage while held, we don’t hit mobs in the head with a gun
-            Item.shoot = ProjectileID.PurificationPowder; // What kind of projectile the gun fires, does not mean anything here because it is replaced by ammo
-            Item.shootSpeed = 16f; // Speed of a projectile. Mainly measured by eye
-            Item.useAmmo = AmmoID.Bullet; // What ammo gun uses
+            Item.noMelee = true;
+            Item.shoot = ProjectileID.PurificationPowder;
+            Item.shootSpeed = 16f;
+            Item.useAmmo = AmmoID.Bullet;
         }
+
         public override void AddRecipes()
         {
             CreateRecipe()
